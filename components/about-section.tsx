@@ -95,14 +95,14 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* 3D CANVAS */}
-          <div className="relative h-[200px] xs:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[500px] order-2 lg:order-1 w-full">
+          <div className="relative h-fit sm:h-fit md:h-fit lg:h-fit order-2 lg:order-1">
             <Canvas
               shadows
               camera={{ position: [7, 4, 1], fov: 40 }}
@@ -126,16 +126,16 @@ export function AboutSection() {
           </div>
 
           {/* CONTENT */}
-          <div className="order-1 lg:order-2 px-2 sm:px-0">
-            <span className="text-primary text-xs sm:text-sm font-medium uppercase tracking-wider block mb-2 sm:mb-3">
+          <div className="order-1 lg:order-2">
+            <span className="text-primary text-xs sm:text-sm font-medium uppercase tracking-wider">
               About Me
             </span>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4 sm:mb-6">
               Crafting Digital Experiences
             </h2>
 
-            <p className="text-muted-foreground mb-4 sm:mb-5 md:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
               Design-driven software engineer with expertise in AI-powered media
               systems, AR/3D experiences, and full-stack platforms. Proven
               ability to deliver end-to-end products combining LLMs, retrieval
@@ -143,19 +143,17 @@ export function AboutSection() {
               business impact.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 md:gap-4 mb-5 sm:mb-6 md:mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {highlights.map((h, i) => (
                 <div key={i} className="flex items-center gap-2 sm:gap-3">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
-                  <span className="text-xs sm:text-sm md:text-base leading-relaxed">
-                    {h}
-                  </span>
+                  <span className="text-xs sm:text-sm">{h}</span>
                 </div>
               ))}
             </div>
 
             <Button
-              className="group w-full sm:w-auto text-sm sm:text-base"
+              className="group w-full sm:w-auto"
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = "/resume/resume.pdf";

@@ -140,28 +140,28 @@ export function FreelancingSection() {
   return (
     <section
       id="freelancing"
-      className="relative py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-          <span className="text-primary text-xs sm:text-sm font-medium uppercase tracking-wider block mb-2 sm:mb-3">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <span className="text-primary text-xs sm:text-sm font-medium uppercase tracking-wider">
             Available for Hire
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 text-balance px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4 text-balance">
             I Take Freelancing Work
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto text-pretty px-2">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto text-pretty">
             Looking for a developer to bring your vision to life? Let's
             collaborate on your next project.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-10 md:mb-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8 sm:mb-12">
           {/* 3D Visual */}
-          <div className="relative h-[200px] xs:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[500px] order-2 lg:order-1 w-full">
+          <div className="relative h-fit sm:h-fit md:h-fit lg:h-fit order-2 lg:order-1">
             <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
               <Suspense fallback={null}>
                 <ambientLight intensity={0.4} />
@@ -187,24 +187,24 @@ export function FreelancingSection() {
           </div>
 
           {/* Content */}
-          <div className="order-1 lg:order-2 px-2 sm:px-0">
-            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-5">
+          <div className="order-1 lg:order-2">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                 Let's Build Something Amazing
               </h3>
             </div>
 
-            <p className="text-muted-foreground mb-4 sm:mb-5 md:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
               I specialize in creating cutting-edge digital experiences that
               combine beautiful design with powerful functionality. Whether you
               need a web app, mobile application, AR experience, or AI-powered
               solution, I'm here to help.
             </p>
 
-            <div className="space-y-2 sm:space-y-2.5 md:space-y-3 mb-4 sm:mb-5 md:mb-6">
+            <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
               {[
                 "End-to-end project delivery",
                 "Modern tech stack expertise",
@@ -213,7 +213,7 @@ export function FreelancingSection() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 sm:gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                  <span className="text-xs sm:text-sm md:text-base text-muted-foreground">
+                  <span className="text-xs sm:text-sm text-muted-foreground">
                     {item}
                   </span>
                 </div>
@@ -223,7 +223,7 @@ export function FreelancingSection() {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 group w-full sm:w-auto text-sm sm:text-base"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 group w-full sm:w-auto"
             >
               Start a Project
               <Briefcase className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
@@ -232,7 +232,7 @@ export function FreelancingSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
